@@ -1,0 +1,43 @@
+# Node.js and npm
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Compiled files
+dist/
+build/
+*.log
+*.pid
+*.out
+
+# Environment configuration
+.env
+
+# Editor and IDE files
+.vscode/
+.idea/
+
+# Sequelize generated files
+sequelize-auto-config.json
+
+# Compiled JavaScript
+#*.js
+
+#config files
+config/config.json
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# macOS
+.DS_Store
+._*
+
+# Logs
+log/
+logs/
+
+# User-specific files
+npm-debug.log
+yarn-error.log
