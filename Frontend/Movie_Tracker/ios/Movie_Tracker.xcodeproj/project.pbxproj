@@ -23,7 +23,14 @@
 		44F217937AEE4BB6BF0D846D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69DF85B2D7BC449F8A851310 /* Poppins-Regular.ttf */; };
 		BEF1E1593D26491DBDFC3C89 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5595F9A3F7C7447BA9138E38 /* Poppins-SemiBold.ttf */; };
 		4B46314AF224419A8809FB10 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 546F25E245274CC7A0EDBAA2 /* Poppins-Thin.ttf */; };
-		81D85258F08244F6B4A2EE3A /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D285118507D4C5C83555801 /* icomoon.ttf */; };
+		BB602A4953734C949D6AA7B3 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BD5468EE024208B0AB8731 /* icomoon.ttf */; };
+		E1F673488F934F1A98CCBAF8 /* movieLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 726EF9D0B5534BB6850EAFED /* movieLogo.png */; };
+		9661398EF5BE4DBCBF4F2969 /* end_games.png in Resources */ = {isa = PBXBuildFile; fileRef = 77AEB2B47CC04C41B5587105 /* end_games.png */; };
+		52BCB98BBE6B4A20A967229C /* good_doctor.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6ECDA24FB04D1980EE25E8 /* good_doctor.png */; };
+		0A365EC540754ED3A060A3BD /* old_boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D78F1E1BC4F12B060C346 /* old_boy.png */; };
+		232665CBC0F04063B272AF2E /* shes_a_man.png in Resources */ = {isa = PBXBuildFile; fileRef = 40E777DBF84C4E5BBD8752F6 /* shes_a_man.png */; };
+		2E9306C731FA47E7842D7631 /* spiderman_into_the_spiderverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 838A9CC96CE5493898201628 /* spiderman_into_the_spiderverse.png */; };
+		CA43B2498271446CAE590B2E /* the_strangers.png in Resources */ = {isa = PBXBuildFile; fileRef = 41831526B301492B9B558EA4 /* the_strangers.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +70,14 @@
 		69DF85B2D7BC449F8A851310 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5595F9A3F7C7447BA9138E38 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		546F25E245274CC7A0EDBAA2 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0D285118507D4C5C83555801 /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../src/assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		65BD5468EE024208B0AB8731 /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../src/assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		726EF9D0B5534BB6850EAFED /* movieLogo.png */ = {isa = PBXFileReference; name = "movieLogo.png"; path = "../src/assets/app_images/movieLogo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		77AEB2B47CC04C41B5587105 /* end_games.png */ = {isa = PBXFileReference; name = "end_games.png"; path = "../src/assets/movie_assets/end_games.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AE6ECDA24FB04D1980EE25E8 /* good_doctor.png */ = {isa = PBXFileReference; name = "good_doctor.png"; path = "../src/assets/movie_assets/good_doctor.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C1D78F1E1BC4F12B060C346 /* old_boy.png */ = {isa = PBXFileReference; name = "old_boy.png"; path = "../src/assets/movie_assets/old_boy.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		40E777DBF84C4E5BBD8752F6 /* shes_a_man.png */ = {isa = PBXFileReference; name = "shes_a_man.png"; path = "../src/assets/movie_assets/shes_a_man.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		838A9CC96CE5493898201628 /* spiderman_into_the_spiderverse.png */ = {isa = PBXFileReference; name = "spiderman_into_the_spiderverse.png"; path = "../src/assets/movie_assets/spiderman_into_the_spiderverse.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		41831526B301492B9B558EA4 /* the_strangers.png */ = {isa = PBXFileReference; name = "the_strangers.png"; path = "../src/assets/movie_assets/the_strangers.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +195,14 @@
 				69DF85B2D7BC449F8A851310 /* Poppins-Regular.ttf */,
 				5595F9A3F7C7447BA9138E38 /* Poppins-SemiBold.ttf */,
 				546F25E245274CC7A0EDBAA2 /* Poppins-Thin.ttf */,
-				0D285118507D4C5C83555801 /* icomoon.ttf */,
+				65BD5468EE024208B0AB8731 /* icomoon.ttf */,
+				726EF9D0B5534BB6850EAFED /* movieLogo.png */,
+				77AEB2B47CC04C41B5587105 /* end_games.png */,
+				AE6ECDA24FB04D1980EE25E8 /* good_doctor.png */,
+				9C1D78F1E1BC4F12B060C346 /* old_boy.png */,
+				40E777DBF84C4E5BBD8752F6 /* shes_a_man.png */,
+				838A9CC96CE5493898201628 /* spiderman_into_the_spiderverse.png */,
+				41831526B301492B9B558EA4 /* the_strangers.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -292,7 +313,14 @@
 				44F217937AEE4BB6BF0D846D /* Poppins-Regular.ttf in Resources */,
 				BEF1E1593D26491DBDFC3C89 /* Poppins-SemiBold.ttf in Resources */,
 				4B46314AF224419A8809FB10 /* Poppins-Thin.ttf in Resources */,
-				81D85258F08244F6B4A2EE3A /* icomoon.ttf in Resources */,
+				BB602A4953734C949D6AA7B3 /* icomoon.ttf in Resources */,
+				E1F673488F934F1A98CCBAF8 /* movieLogo.png in Resources */,
+				9661398EF5BE4DBCBF4F2969 /* end_games.png in Resources */,
+				52BCB98BBE6B4A20A967229C /* good_doctor.png in Resources */,
+				0A365EC540754ED3A060A3BD /* old_boy.png in Resources */,
+				232665CBC0F04063B272AF2E /* shes_a_man.png in Resources */,
+				2E9306C731FA47E7842D7631 /* spiderman_into_the_spiderverse.png in Resources */,
+				CA43B2498271446CAE590B2E /* the_strangers.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

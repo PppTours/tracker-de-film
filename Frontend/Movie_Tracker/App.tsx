@@ -12,7 +12,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ 
-        contentStyle: {backgroundColor: COLORS.primaryDarkBlue},
+        contentStyle: {backgroundColor: COLORS.backgroundColor},
         headerShown: false, 
       }}>
         <Stack.Screen
@@ -29,9 +29,3 @@ const App = () => {
 }
 
 export default App
-
-const styles = StyleSheet.create({
-  NavigationComponent: {
-    backgroundColor: COLORS.primaryDarkBlue
-  }
-})

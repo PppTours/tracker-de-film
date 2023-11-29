@@ -5,7 +5,7 @@ import { SPACING } from '../../theme/theme'
 const LogoComponent = () => {
   return (
     <View style={styles.MovieContainer}>
-        <Image source={require('../../assets/app_images/movieLogo.png')}></Image>
+        <Image source={require('../../assets/app_images/movielogo.png')}></Image>
     </View>
   )
 }

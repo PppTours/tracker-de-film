@@ -34,6 +34,7 @@ interface Spacing {
   
   interface Color {
     primaryDarkBlue: string;
+    primaryBlue: string;
     primaryRedHex: string;
     primaryOrangeHex: string;
     primaryBlackHex: string;
@@ -46,10 +47,12 @@ interface Spacing {
     primaryWhiteHex: string;
     primaryBlackRGBA: string;
     secondaryBlackRGBA: string;
+    backgroundColor: string;
   }
   
   export const COLORS: Color = {
     primaryDarkBlue: '#170138',
+    primaryBlue: '#004080',
     primaryRedHex: '#DC3535',
     primaryOrangeHex: '#FF9F1C',
     primaryBlackHex: '#0C0F14',
@@ -62,6 +65,7 @@ interface Spacing {
     primaryWhiteHex: '#FFFFFF',
     primaryBlackRGBA: 'rgba(12,15,20,0.5)',
     secondaryBlackRGBA: 'rgba(0,0,0,0.7)',
+    backgroundColor: '#191B2A'
   };
   
   interface FontFamily {

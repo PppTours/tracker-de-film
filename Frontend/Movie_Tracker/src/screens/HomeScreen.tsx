@@ -11,9 +11,9 @@ const HomeScreen = ({navigation}: any) => {
     <View style={styles.ScreenContainer}>
         <LogoComponent />
         <ScrollView>
-          <RecommandationComponent />
+          <RecommandationComponent navigation={navigation} />
           <WatchlistComponent />
-          <ContinueSeriesComponent navigation={navigation} />
+          <ContinueSeriesComponent />
         </ScrollView>
 
 
@@ -27,6 +27,6 @@ export default HomeScreen
 const styles = StyleSheet.create({
   ScreenContainer: {
     flex: 1,
-    backgroundColor: COLORS.primaryDarkBlue,
+    backgroundColor: COLORS.backgroundColor,
   }
 })

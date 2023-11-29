@@ -16,7 +16,7 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
 }) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => {}}>
+            <View>
                 <Image 
                     style={styles.movieImage}
                     source={imagelink}
@@ -26,7 +26,7 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
                         ? `${name}`
                         : `${name.substring(0,15)}...`}
                 </Text>
-            </TouchableOpacity>
+            </View>
 
         </View>
     )

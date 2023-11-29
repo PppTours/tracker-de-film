@@ -24,7 +24,7 @@ const ContinueSeriesComponent = ({navigation}: any) => {
                 data={ContinueList}
                 keyExtractor={item => item.id}
                 renderItem={({item}) => {
-                    return <TouchableOpacity onPress={() => {navigation.push('Info')}}>
+                    return <TouchableOpacity onPress={() => {}}>
                         <ContinueCard
                             id={item.id}
                             imagelink={item.image_link}

@@ -4,7 +4,7 @@ import { COLORS, FONTSIZE, SPACING } from '../../theme/theme'
 import { useStore } from '../../store/store'
 import RecommendationCard from './cards/RecommendationCard'
 
-const RecommandationComponent = () => {
+const RecommandationComponent = ({navigation}: any) => {
     const RecommendationList = useStore((state: any) => state.RecommendationList)
     const ListRef:any = useRef<FlatList>()
   return (
@@ -24,7 +24,11 @@ const RecommandationComponent = () => {
                 keyExtractor={item => item.id}
                 renderItem={({item}) => {
                     return <TouchableOpacity
-                        onPress={() => {}}>
+                        onPress={() => {
+                            navigation.push('Info', {
+                                id: item.id
+                            })
+                        }}>
                         <RecommendationCard
                             id={item.id}
                             name={item.name}
@@ -66,7 +70,4 @@ const styles = StyleSheet.create({
     RecommandationContent: {
         paddingTop: SPACING.space_12
     },
-    ScrollViewFlex: {
-
-    }
 })

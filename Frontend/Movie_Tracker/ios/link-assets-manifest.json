@@ -2,8 +2,12 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/app_images/movieLogo.png",
+      "sha1": "bba604ad8c65fedc5fc8b2ebe0689af8308fb777"
+    },
+    {
       "path": "src/assets/fonts/icomoon.ttf",
-      "sha1": "2a5716e1f988fbd945b010eb5445d3e2dc435cfb"
+      "sha1": "db082443ade4587b78d8442255ebc01d948654d8"
     },
     {
       "path": "src/assets/fonts/Poppins-Black.ttf",
@@ -40,6 +44,30 @@
     {
       "path": "src/assets/fonts/Poppins-Thin.ttf",
       "sha1": "09ba4dcd5509c8085bf88c665dcc51cbdfced27b"
+    },
+    {
+      "path": "src/assets/movie_assets/end_games.png",
+      "sha1": "7805e55e7ee019d874fa6af1bfbe96482430cb23"
+    },
+    {
+      "path": "src/assets/movie_assets/good_doctor.png",
+      "sha1": "cfccf2cbaa2e96eefd2e75ff0de4a3267cce5648"
+    },
+    {
+      "path": "src/assets/movie_assets/old_boy.png",
+      "sha1": "f50557c543dda775daf277edb61fe99f867eaf5e"
+    },
+    {
+      "path": "src/assets/movie_assets/shes_a_man.png",
+      "sha1": "9d0dc9ebe1abf69cbbc56f81a74dadb1baa2ba24"
+    },
+    {
+      "path": "src/assets/movie_assets/spiderman_into_the_spiderverse.png",
+      "sha1": "2eeb7655a443596fe4c9e3cd7d5e728830cb7362"
+    },
+    {
+      "path": "src/assets/movie_assets/the_strangers.png",
+      "sha1": "3bccc5f40affea4d880bd2717f7a94e8d8cdbf8b"
     }
   ]
 }
