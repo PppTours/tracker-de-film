@@ -6,7 +6,7 @@ import { TextInput } from 'react-native-paper'
 
 const RatingComponent = () => {
   return (
-    <View style={styles.RatingContainer}>
+    <View>
         <View style={styles.RatingTextContainer}>
             <Text style={styles.RatingText}>Rating</Text>
         </View>
@@ -34,9 +34,7 @@ const RatingComponent = () => {
 export default RatingComponent
 
 const styles = StyleSheet.create({
-    RatingContainer: {
-        paddingBottom: SPACING.space_36
-    },
+
     RatingTextContainer: {
         borderBottomColor: COLORS.primaryWhiteHex,
         borderBottomWidth: 3,

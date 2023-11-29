@@ -7,12 +7,13 @@ import LogoComponent from '../components/home/LogoComponent';
 import { ProgressBar } from 'react-native-paper';
 import CustomIcon from '../components/CustomIcon';
 import RatingComponent from '../components/info/RatingComponent';
+import SeasonRecommandation from '../components/info/SeasonRecommandation';
 
 const InfoScreen = ({navigation, route}: any) => {
     const ItemOfIndex = useStore((state: any) => state.CompleteList)[route.params.id - 1]
     return (
         <View style={styles.container}>
-            <ScrollView style={styles.ScrollView}>
+            <ScrollView>
                 <LogoComponent />
                 <DescriptionComponent 
                     item={ItemOfIndex}
@@ -39,6 +40,10 @@ const InfoScreen = ({navigation, route}: any) => {
                     </View>
                 </TouchableOpacity>
                 <RatingComponent />
+                <SeasonRecommandation 
+                    content={ItemOfIndex}
+                    season={route.params.season}
+                    navigation={navigation}/>
             </ScrollView>
         </View>
     );
@@ -50,8 +55,6 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: COLORS.backgroundColor,
-    },
-    ScrollView: {
     },
     UpdateProgress: {
         backgroundColor: COLORS.secondaryLightGreyHex,
