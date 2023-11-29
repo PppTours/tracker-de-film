@@ -17,22 +17,26 @@ const WatchlistComponent = () => {
         </View>
 
         <View style={styles.WatchlistContent}>
-            <FlatList
+        <FlatList
                 ref={ListRef}
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 data={WatchList}
                 keyExtractor={item => item.id}
-                renderItem={({item}) => {
-                    return <TouchableOpacity onPress={() => {}}>
-                        <WatchlistCard
-                            id={item.id}
-                            category={item.category}
-                            imagelink={item.image_link}
-                            name={item.name}
-                        ></WatchlistCard>
-                    </TouchableOpacity>
-                }}
+                renderItem={({ item }) => (
+                    <>
+                      {item.seasons.map((season: any) => (
+                        <TouchableOpacity key={season.season_id} onPress={() => {}}>
+                          <WatchlistCard
+                                  id={item.id}
+                                  imagelink={season.image_link}
+                                  name={item.name} 
+                                  category={item.category}                          
+                          />
+                        </TouchableOpacity>
+                      ))}
+                    </>
+                  )}
             >
             </FlatList>
         </View>

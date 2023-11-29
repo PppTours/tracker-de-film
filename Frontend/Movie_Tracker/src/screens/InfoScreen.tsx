@@ -10,13 +10,13 @@ import RatingComponent from '../components/info/RatingComponent';
 
 const InfoScreen = ({navigation, route}: any) => {
     const ItemOfIndex = useStore((state: any) => state.CompleteList)[route.params.id - 1]
-
     return (
         <View style={styles.container}>
             <ScrollView style={styles.ScrollView}>
                 <LogoComponent />
                 <DescriptionComponent 
-                    item={ItemOfIndex}/>
+                    item={ItemOfIndex}
+                    season={route.params.season}/>
                 <TouchableOpacity style={styles.UpdateProgress}>
                 <Text style={styles.UpdateText}>Update Progress</Text>
                 </TouchableOpacity>

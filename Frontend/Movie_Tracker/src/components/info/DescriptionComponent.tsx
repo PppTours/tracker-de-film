@@ -3,17 +3,18 @@ import React from 'react'
 import { COLORS, FONTSIZE, SPACING } from '../../theme/theme'
 
 
-const DescriptionComponent = ({item}: any) => {
-    console.log(item)
+const DescriptionComponent = ({item, season}: any) => {
+
   return (
+
     <View style={styles.DescriptionContainer}>
         <Image
             style={styles.MainImage}
-            source={item.image_link} 
+            source={season.image_link} 
             resizeMode='contain' />
         <Text style={styles.MainTitle}>{item.name}</Text>
-        <Text style={styles.SubTitle}>{item.season}</Text>
-        <Text style={styles.SubTitle}>Release date : {item.release_date}</Text>
+        <Text style={styles.SubTitle}>{season.season}</Text>
+        <Text style={styles.SubTitle}>Release date : {season.release_date}</Text>
         <View style={styles.CategoryContainer}>
             {item.category.map((singleCategory: string) => {
                 return(
@@ -24,7 +25,7 @@ const DescriptionComponent = ({item}: any) => {
 
         <Text style={styles.DescriptionTag}>Description</Text>
         <View style={styles.ThinLine}></View>
-        <Text style={styles.ItemDescription}>{item.description}</Text>
+        <Text style={styles.ItemDescription}>{season.description}</Text>
     </View>
   )
 }

@@ -17,28 +17,35 @@ const RecommandationComponent = ({navigation}: any) => {
         </View>
 
         <View style={styles.RecommandationContent}>
-            <FlatList
-                ref = {ListRef}
+        <FlatList
+                ref={ListRef}
                 horizontal
+                showsHorizontalScrollIndicator={false}
                 data={RecommendationList}
                 keyExtractor={item => item.id}
-                renderItem={({item}) => {
-                    return <TouchableOpacity
-                        onPress={() => {
-                            navigation.push('Info', {
-                                id: item.id
-                            })
-                        }}>
-                        <RecommendationCard
+                renderItem={({ item }) => (
+                    <>
+                      {item.seasons.map((season: any) => (
+                        <TouchableOpacity 
+                            key={season.season_id} 
+                            onPress={() => {
+                                navigation.push('Info', {
+                                    id: item.id,
+                                    season: season
+                                })
+                            }}>
+    
+                          <RecommendationCard
                             id={item.id}
+                            imagelink={season.image_link}
                             name={item.name}
-                            imagelink={item.image_link}
-                        >
-                        </RecommendationCard>
-                        
-                    </TouchableOpacity>
-                }}
-            ></FlatList>
+                          />
+                        </TouchableOpacity>
+                      ))}
+                    </>
+                  )}
+            >
+            </FlatList>
         </View>
 
 

@@ -6,6 +6,7 @@ const MovieData = [
 
         seasons:[
             {
+            season_id: '1',
             season: 'Season 1',
         release_date: '17-03-2006',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
@@ -18,6 +19,7 @@ const MovieData = [
         name: "She's a man",
         seasons:[
             {
+                season_id: '1',
             season: 'Season 1',
         release_date: '17-03-2006',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
@@ -31,6 +33,7 @@ const MovieData = [
         name: 'The Strangers',
         seasons:[
             {
+                season_id: '1',
             season: 'Season 1',
         release_date: '17-03-2006',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
@@ -44,6 +47,7 @@ const MovieData = [
         name: 'End Games',
         seasons:[
             {
+                season_id: '1',
             season: 'Season 1',
         release_date: '17-03-2006',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
@@ -57,6 +61,7 @@ const MovieData = [
         name: 'Spiderman - Into the Spider Verse',
         seasons:[
             {
+                season_id: '1',
             season: 'Season 1',
         release_date: '17-03-2006',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
@@ -70,6 +75,7 @@ const MovieData = [
         name: 'Good Doctor',
         seasons:[
             {
+                season_id: '1',
             season: 'Season 1',
         release_date: '17-03-2006',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
@@ -84,18 +90,21 @@ const MovieData = [
         category: ['Action', 'Science Fiction'],
         seasons:[
         {
+            season_id: '1',
         season: 'Season 1',
     release_date: '17-03-2006',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
     image_link: require('../assets/movie_assets/the_boys_s1.png')
         },
         {
+            season_id: '2',
             season: 'Season 2',
         release_date: '17-03-2006',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
         image_link: require('../assets/movie_assets/the_boys_s2.png')
             },
         {
+            season_id: '3',
             season: 'Season 3',
         release_date: '17-03-2006',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',

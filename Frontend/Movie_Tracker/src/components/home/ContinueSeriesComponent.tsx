@@ -23,15 +23,19 @@ const ContinueSeriesComponent = ({navigation}: any) => {
                 showsHorizontalScrollIndicator={false}
                 data={ContinueList}
                 keyExtractor={item => item.id}
-                renderItem={({item}) => {
-                    return <TouchableOpacity onPress={() => {}}>
-                        <ContinueCard
+                renderItem={({ item }) => (
+                    <>
+                      {item.seasons.map((season: any) => (
+                        <TouchableOpacity key={season.season_id} onPress={() => {}}>
+                          <ContinueCard
                             id={item.id}
-                            imagelink={item.image_link}
+                            imagelink={season.image_link}
                             name={item.name}
-                        ></ContinueCard>
-                    </TouchableOpacity>
-                }}
+                          />
+                        </TouchableOpacity>
+                      ))}
+                    </>
+                  )}
             >
             </FlatList>
         </View>
