@@ -31,7 +31,7 @@ const RecommandationComponent = ({navigation}: any) => {
                             onPress={() => {
                                 navigation.push('Info', {
                                     id: item.id,
-                                    season: season
+                                    season_id: season.season_id
                                 })
                             }}>
     

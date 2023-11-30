@@ -72,20 +72,6 @@ const MovieData = [
     },
     {
         id: '6',
-        name: 'Good Doctor',
-        seasons:[
-            {
-                season_id: '1',
-            season: 'Season 1',
-        release_date: '17-03-2006',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
-        image_link: require('../assets/movie_assets/good_doctor.png')
-            }
-        ],
-        category: ['Action', 'Science Fiction'],
-    },
-    {
-        id: '7',
         name: 'The Boys',
         category: ['Action', 'Science Fiction'],
         seasons:[
@@ -111,7 +97,22 @@ const MovieData = [
         image_link: require('../assets/movie_assets/the_boys_s3.png')
             },
         ],
-    }
+    },
+    {
+        id: '7',
+        name: 'Good Doctor',
+        seasons:[
+            {
+                season_id: '1',
+            season: 'Season 1',
+        release_date: '17-03-2006',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor magna, efficitur non iaculis ut, consectetur lobortis massa. Suspendisse porttitor vulputate nunc, ut elementum sapien sodales in. Mauris faucibus eleifend elementum. Cras pharetra placerat quam, convallis gravida metus sollicitudin eget. Morbi mauris erat, suscipit vitae quam sit amet, fermentum feugiat augue. Praesent ipsum mauris, egestas faucibus massa non, sodales hendrerit ipsum.',
+        image_link: require('../assets/movie_assets/good_doctor.png')
+            }
+        ],
+        category: ['Action', 'Science Fiction'],
+    },
+    
    
 
 

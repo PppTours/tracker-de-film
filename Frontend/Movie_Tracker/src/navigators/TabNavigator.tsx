@@ -59,7 +59,7 @@ const TabNavigator = () => {
             />
         )
     }}></Tab.Screen>
-
+    
     </Tab.Navigator>
   )
 }

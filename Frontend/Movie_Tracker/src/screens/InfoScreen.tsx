@@ -11,13 +11,17 @@ import SeasonRecommandation from '../components/info/SeasonRecommandation';
 
 const InfoScreen = ({navigation, route}: any) => {
     const ItemOfIndex = useStore((state: any) => state.CompleteList)[route.params.id - 1]
+    console.log(route.params.season_id - 1)
+    const SeasonOfIndex = ItemOfIndex.seasons[route.params.season_id - 1]
+    console.log("Item of Index : ", ItemOfIndex)
+    console.log("Season of index : ", SeasonOfIndex)
     return (
         <View style={styles.container}>
             <ScrollView>
                 <LogoComponent />
                 <DescriptionComponent 
                     item={ItemOfIndex}
-                    season={route.params.season}/>
+                    season={SeasonOfIndex}/>
                 <TouchableOpacity style={styles.UpdateProgress}>
                 <Text style={styles.UpdateText}>Update Progress</Text>
                 </TouchableOpacity>
@@ -42,7 +46,7 @@ const InfoScreen = ({navigation, route}: any) => {
                 <RatingComponent />
                 <SeasonRecommandation 
                     content={ItemOfIndex}
-                    season={route.params.season}
+                    season={SeasonOfIndex}
                     navigation={navigation}/>
             </ScrollView>
         </View>
