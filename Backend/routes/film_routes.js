@@ -10,6 +10,7 @@ const { addApiKeyToRequest } = require('../middlewares/tmdb_ware');
 router.get('/search/eng',verifyToken,filmController.searchMovieEnglish);
 router.get('/search/fr',verifyToken,filmController.searchMovieFrench);
 router.get('/info/:idMovie',verifyToken,filmController.getMovieInfo);
+router.post('/create',verifyToken,filmController.saveMovieInDB)
 
 
 module.exports = router;

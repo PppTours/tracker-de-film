@@ -33,7 +33,7 @@ function processStringURL(input) {
     });
   }
   
-function addKeyToUrl(url,key)
+function addKeyToUrl(url)
 {
 
   let urlWithToken = `${url}?&api_key=${token}`;
@@ -62,7 +62,7 @@ async function searchMovie(req, res, language)
 
     res.status(200).json(json);})
   .catch(err => {console.error('error:' + err);
-  res.status(500).json({ error: err.message });
+  return res.status(500).json({ error: err.message });
 
 });
 }
@@ -90,7 +90,7 @@ exports.getMovieInfo = (req,res) =>
   const fetch = require('node-fetch');
 
   const searchMovieURL = `${URLTMDB}/movie/${idMovie.trim()}`;
-  const tokenUrl = addKeyToUrl(searchMovieURL, apikey);
+  const tokenUrl = addKeyToUrl(searchMovieURL);
 
   const options = {
     method: 'GET',
@@ -121,3 +121,21 @@ exports.getMovieInfo = (req,res) =>
 
 }
 
+exports.saveMovieInDB = (req,res) =>
+{
+ 
+  try {
+    const [idFilm, name, release_date, description] = req.body;
+    if (!idFilm || !name || !release_date || !description) {
+      return res.status(400).json({ error: "Incomplete information in the body" });
+    }
+
+    
+
+    return res.status(200).json("idFilm, name, release_date, description");
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+
+
+}

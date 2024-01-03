@@ -89,10 +89,31 @@ async function getImagesFromTMBD (req,res,media) {
 
 exports.getImagesForFilm = (req,res) =>
 {
-    const idFilm = req.params.idFilm;
+    try {
+        const idFilm = req.params.idFilm;
+        if(!idFilm)
+        {
+            return res.status(400).json({error: "Film isn't selected"});
+        }
 
-    if(!idFilm)
-    {
-        return res.status(200).json({error: ""})
+        Film.findByPk(idFilm).then((film)=> 
+        {
+            if(!film)
+            {
+                return res.status(400).json({error: "Film doesn't exist"});
+            }else
+            {
+                ///Recupérer images
+            }
+
+
+        })
+        
+    } catch (error) {
+        console.error('Error:', error);
+        return res.status(500).json({ error: 'An error occurred with the server' }); 
     }
+    
+
+    
 }
