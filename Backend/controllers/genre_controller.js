@@ -127,3 +127,16 @@ exports.getGenreName = async (req,res) => {
     
     
 }
+
+exports.getAllGenre = async (req, res) => {
+    try {
+        
+        const genres =  await Genre.findAll();
+        if(!genres)
+        {
+            return res.status(400).json({error: "No genre in the database"});
+        }
+    } catch (error) {
+        return res.status(500).json({ error: error.message }); 
+    }
+}
