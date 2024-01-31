@@ -1,15 +1,21 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { COLORS } from '../theme/theme'
 import ShiftCategoryComponent from '../components/misc/ShiftCategoryComponent'
 import ContentGridComponent from '../components/search/ContentGridComponent'
 
 const SearchScreen = ({navigation}: any) => {
+  const [selectedCategory, setSelectedCategory] = useState('movies')
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  }
+
   return (
     <View style={styles.ScreenContainer}>
       <ScrollView>
-        <ShiftCategoryComponent />
-        <ContentGridComponent navigation={navigation} />
+        <ShiftCategoryComponent onCategoryChange={handleCategoryChange}/>
+        <ContentGridComponent navigation={navigation} selectedCategory={selectedCategory}/>
       </ScrollView>
 
     </View>

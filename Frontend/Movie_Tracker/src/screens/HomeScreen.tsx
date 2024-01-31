@@ -15,9 +15,6 @@ const HomeScreen = ({navigation}: any) => {
           <WatchlistComponent />
           <ContinueSeriesComponent />
         </ScrollView>
-
-
-        
     </View>
   )
 }

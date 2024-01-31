@@ -7,13 +7,15 @@ interface ContentGridCardProps {
     imagelink: ImageProps;
     name: string;
     season_name: string;
+    color: string;
 }
 
 const ContentGridCard: React.FC<ContentGridCardProps> = ({
     id,
     imagelink,
     name,
-    season_name
+    season_name,
+    color
 
 }) => {
     return (
@@ -30,7 +32,7 @@ const ContentGridCard: React.FC<ContentGridCardProps> = ({
                             : `${name.substring(0,10)}...`}
                     </Text>
                     <Text style={styles.SeasonName}>{season_name}</Text>
-                    <TouchableOpacity style={styles.AddToCollection}>
+                    <TouchableOpacity style={[styles.AddToCollection, {backgroundColor: color == 'orange' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
                         <Text style={styles.AddToCollectionText}>Add to collection</Text>
                     </TouchableOpacity>
                 </View>
@@ -68,7 +70,6 @@ const styles = StyleSheet.create({
     },
     AddToCollection: {
         marginTop: 'auto',
-        backgroundColor: COLORS.primaryBlue,
         paddingTop: SPACING.space_2,
         paddingBottom: SPACING.space_2,
         paddingRight: SPACING.space_8,

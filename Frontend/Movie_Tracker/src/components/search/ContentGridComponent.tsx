@@ -1,14 +1,27 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useStore } from '../../store/store'
 import { COLORS, SPACING } from '../../theme/theme'
 import ContentGridCard from './cards/ContentGridCard'
 
-const ContentGridComponent = ({navigation}: any) => {
-    const RecommendationList = useStore((state: any) => state.RecommendationList)
-    const NewRecommendationList = MergeSeasonInList(RecommendationList)
-    console.log(NewRecommendationList)
+const ContentGridComponent = ({navigation, selectedCategory}: any) => {
+
+    const MovieList = MergeSeasonInList(useStore((state: any) => state.RecommendationList))
+    const SerieList = MergeSeasonInList(useStore((state: any) => state.SerieList))
     const ListRef:any = useRef<FlatList>()
+
+    const [contentList, setContentList] = useState(MovieList)
+    const [colorList, setColorList] = useState('orange')
+
+    useEffect(() => {
+        if (selectedCategory == 'movies') {
+            setContentList(MovieList)
+            setColorList('orange')
+        } else {
+            setContentList(SerieList)
+            setColorList('blue')
+        }
+    }, [selectedCategory])
 
     function MergeSeasonInList(RecommendationList: any) {
         let movieIndex = 0
@@ -38,7 +51,7 @@ const ContentGridComponent = ({navigation}: any) => {
     <View style={styles.ContentGrid}>
         <FlatList
             ref={ListRef}
-            data={NewRecommendationList}
+            data={contentList}
             numColumns={2}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
@@ -57,6 +70,7 @@ const ContentGridComponent = ({navigation}: any) => {
                             imagelink={item.image_link}
                             name={item.name}
                             season_name={item.season}
+                            color={colorList}
                           />
                         </TouchableOpacity>
                     </>
