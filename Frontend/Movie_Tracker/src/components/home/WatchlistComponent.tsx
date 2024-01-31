@@ -1,17 +1,28 @@
 import { FlatList, StatusBar, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { COLORS, FONTSIZE, SPACING } from '../../theme/theme'
 import { useStore } from '../../store/store'
 import WatchlistCard from './cards/WatchlistCard'
 
-const WatchlistComponent = () => {
-    const WatchList = useStore((state: any) => state.WatchList)
+const WatchlistComponent = ({category}: any) => {
+    const MovieList = useStore((state: any) => state.RecommendationList)
+    const SerieList = useStore((state: any) => state.SerieList)
     const ListRef:any = useRef<FlatList>()
+    const [contentList, setContentList] = useState(MovieList)
+
+    useEffect(() => {
+      if (category == 'movies') {
+        setContentList(MovieList)
+      } else {
+        setContentList(SerieList)
+      }
+    }, [category])
+
   return (
     <View style={styles.WatchlistContainer}>
         <StatusBar backgroundColor={COLORS.primaryDarkBlue} />
         <View style={styles.headerContainer}>
-            <View style={styles.TextRowContainer}>
+            <View style={[styles.TextRowContainer, {borderBottomColor: category === 'movies' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
                 <Text style={styles.WatchlistText}>WATCHLIST</Text>
             </View>
         </View>
@@ -21,7 +32,7 @@ const WatchlistComponent = () => {
                 ref={ListRef}
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                data={WatchList}
+                data={contentList}
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => (
                     <>
@@ -31,7 +42,8 @@ const WatchlistComponent = () => {
                                   id={item.id}
                                   imagelink={season.image_link}
                                   name={item.name} 
-                                  category={item.category}                          
+                                  category={item.category}
+                                  globalcategory={category}                          
                           />
                         </TouchableOpacity>
                       ))}
@@ -57,7 +69,6 @@ const styles = StyleSheet.create({
     },
     TextRowContainer: {
         alignItems: 'center',
-        borderBottomColor: COLORS.primaryOrangeHex,
         borderBottomWidth: 3,
         width: '85%',
         paddingBottom: SPACING.space_12

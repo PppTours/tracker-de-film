@@ -1,17 +1,27 @@
 import { FlatList, ScrollView, StatusBar, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { COLORS, FONTSIZE, SPACING } from '../../theme/theme'
 import ContinueCard from './cards/ContinueCard'
 import { useStore } from '../../store/store'
 
-const ContinueSeriesComponent = ({navigation}: any) => {
-    const ContinueList = useStore((state: any) => state.ContinueList)
+const ContinueSeriesComponent = ({navigation, category}: any) => {
+    const MovieList = useStore((state: any) => state.RecommendationList)
+    const SerieList = useStore((state: any) => state.SerieList)
     const ListRef:any = useRef<FlatList>()
+    const [contentList, setContentList] = useState(MovieList)
+
+    useEffect(() => {
+      if (category == 'movies') {
+        setContentList(MovieList)
+      } else {
+        setContentList(SerieList)
+      }
+    }, [category])
   return (
     <View style={styles.ContinueSeriesContainer}>
         <StatusBar backgroundColor={COLORS.primaryDarkBlue} />
         <View style={styles.headerContainer}>
-            <View style={styles.TextRowContainer}>
+          <View style={[styles.TextRowContainer, {borderBottomColor: category === 'movies' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
                 <Text style={styles.ContinueSeriesText}>CONTINUE SERIES</Text>
             </View>
         </View>
@@ -21,7 +31,7 @@ const ContinueSeriesComponent = ({navigation}: any) => {
                 ref={ListRef}
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                data={ContinueList}
+                data={contentList}
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => (
                     <>
@@ -31,6 +41,7 @@ const ContinueSeriesComponent = ({navigation}: any) => {
                             id={item.id}
                             imagelink={season.image_link}
                             name={item.name}
+                            category={category}
                           />
                         </TouchableOpacity>
                       ))}
@@ -57,7 +68,6 @@ const styles = StyleSheet.create({
     },
     TextRowContainer: {
         alignItems: 'center',
-        borderBottomColor: COLORS.primaryOrangeHex,
         borderBottomWidth: 3,
         width: '85%',
         paddingBottom: SPACING.space_12

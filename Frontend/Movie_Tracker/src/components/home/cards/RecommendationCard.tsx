@@ -7,12 +7,14 @@ interface RecommendationCardProps {
     id: string;
     imagelink: ImageProps;
     name: string;
+    category: string;
 }
 
 const RecommendationCard: React.FC<RecommendationCardProps> = ({
     id,
     imagelink,
     name,
+    category
 }) => {
     return (
         <View style={styles.container}>
@@ -21,7 +23,7 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
                     style={styles.movieImage}
                     source={imagelink}
                     resizeMode='contain'/>
-                <Text style={styles.movieName}>
+                <Text style={[styles.movieName, {color: category === 'movies' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
                     {name.length < 15
                         ? `${name}`
                         : `${name.substring(0,15)}...`}
@@ -38,7 +40,6 @@ const styles = StyleSheet.create({
         margin: SPACING.space_2,
     },
     movieName: {
-        color: COLORS.primaryOrangeHex,
         textAlign: 'center'
     },
     movieImage: {
