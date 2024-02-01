@@ -5,16 +5,23 @@ import { COLORS, SPACING } from '../../theme/theme'
 import ContentGridCard from './cards/ContentGridCard'
 import { useCategory } from '../misc/CategoryContent'
 
-const ContentGridComponent = ({navigation}: any) => {
-
+const ContentGridComponent = ({navigation, searchValue}: any) => {
+    const ListRef:any = useRef<FlatList>()
     const { selectedCategory, selectedColor} = useCategory();
     const { RecommendationList, SerieList } = useStore((state: any) => state);
     
     const movieListWithSeasons = MergeSeasonInList(RecommendationList);
     const serieListWithSeasons = MergeSeasonInList(SerieList);
-
-    const ListRef:any = useRef<FlatList>()
     const contentList = selectedCategory === 'movies' ? movieListWithSeasons : serieListWithSeasons;
+    const filteredData = filterData(contentList, searchValue);
+
+    function filterData(data: any, searchValue: any) {
+        if (searchValue === '') {
+            return data;
+        } else {
+            return data.filter((item: { [s: string]: unknown } | ArrayLike<unknown>) => Object.values(item).join('').toLowerCase().includes(searchValue.toLowerCase()));
+        }
+    }
 
     function MergeSeasonInList(RecommendationList: any) {
         let movieIndex = 0
@@ -44,7 +51,7 @@ const ContentGridComponent = ({navigation}: any) => {
     <View style={styles.ContentGrid}>
         <FlatList
             ref={ListRef}
-            data={contentList}
+            data={filteredData}
             numColumns={2}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (

@@ -2,6 +2,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
+    "lodash.filter": "^4.6.0",
     "mysql2": "^3.6.0",
     "node-fetch": "^2.7.0",
     "sequelize": "^6.32.1"

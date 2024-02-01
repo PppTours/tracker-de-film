@@ -8,9 +8,7 @@ const ShiftCategoryComponent = () => {
   return (
     <View style={styles.ShiftContainer}>
         <TouchableOpacity 
-            style={
-                styles.ButtonMoviesStyle, selectedCategory !== "movies" ? 
-                styles.ButtonInactiveStyle : styles.ButtonMoviesStyle}
+            style={selectedCategory !== "movies" ? styles.ButtonInactiveStyle : styles.ButtonMoviesStyle}
             onPress= {() => {
                 handleCategoryChange('movies')
             }}
@@ -18,8 +16,7 @@ const ShiftCategoryComponent = () => {
             <Text style={styles.TextStyle}>Movies</Text>
         </TouchableOpacity>
         <TouchableOpacity 
-            style={styles.ButtonSeriesStyle, selectedCategory !== "series" ? 
-            styles.ButtonInactiveStyle : styles.ButtonSeriesStyle}
+            style={selectedCategory !== "series" ? styles.ButtonInactiveStyle : styles.ButtonSeriesStyle}
             onPress= {() => {
                 handleCategoryChange('series')
             }}
