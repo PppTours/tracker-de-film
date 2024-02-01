@@ -32,7 +32,7 @@ const ContentGridCard: React.FC<ContentGridCardProps> = ({
                             : `${name.substring(0,10)}...`}
                     </Text>
                     <Text style={styles.SeasonName}>{season_name}</Text>
-                    <TouchableOpacity style={[styles.AddToCollection, {backgroundColor: color == 'orange' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
+                    <TouchableOpacity style={[styles.AddToCollection, {backgroundColor: color}]}>
                         <Text style={styles.AddToCollectionText}>Add to collection</Text>
                     </TouchableOpacity>
                 </View>

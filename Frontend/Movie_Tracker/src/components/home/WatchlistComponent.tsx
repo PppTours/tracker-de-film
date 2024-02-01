@@ -3,26 +3,20 @@ import React, { useEffect, useRef, useState } from 'react'
 import { COLORS, FONTSIZE, SPACING } from '../../theme/theme'
 import { useStore } from '../../store/store'
 import WatchlistCard from './cards/WatchlistCard'
+import { useCategory } from '../misc/CategoryContent'
 
-const WatchlistComponent = ({category}: any) => {
-    const MovieList = useStore((state: any) => state.RecommendationList)
-    const SerieList = useStore((state: any) => state.SerieList)
-    const ListRef:any = useRef<FlatList>()
-    const [contentList, setContentList] = useState(MovieList)
-
-    useEffect(() => {
-      if (category == 'movies') {
-        setContentList(MovieList)
-      } else {
-        setContentList(SerieList)
-      }
-    }, [category])
+const WatchlistComponent = () => {
+  const { selectedCategory, selectedColor} = useCategory();
+  const { RecommendationList, SerieList } = useStore((state: any) => state);
+  
+  const ListRef:any = useRef<FlatList>()
+  const contentList = selectedCategory === 'movies' ? RecommendationList : SerieList;
 
   return (
     <View style={styles.WatchlistContainer}>
         <StatusBar backgroundColor={COLORS.primaryDarkBlue} />
         <View style={styles.headerContainer}>
-            <View style={[styles.TextRowContainer, {borderBottomColor: category === 'movies' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
+            <View style={[styles.TextRowContainer, {borderBottomColor: selectedColor}]}>
                 <Text style={styles.WatchlistText}>WATCHLIST</Text>
             </View>
         </View>
@@ -43,7 +37,7 @@ const WatchlistComponent = ({category}: any) => {
                                   imagelink={season.image_link}
                                   name={item.name} 
                                   category={item.category}
-                                  globalcategory={category}                          
+                                  color={selectedColor}                          
                           />
                         </TouchableOpacity>
                       ))}

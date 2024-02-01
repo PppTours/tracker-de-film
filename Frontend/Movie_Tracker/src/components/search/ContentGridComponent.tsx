@@ -3,25 +3,18 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useStore } from '../../store/store'
 import { COLORS, SPACING } from '../../theme/theme'
 import ContentGridCard from './cards/ContentGridCard'
+import { useCategory } from '../misc/CategoryContent'
 
-const ContentGridComponent = ({navigation, selectedCategory}: any) => {
+const ContentGridComponent = ({navigation}: any) => {
 
-    const MovieList = MergeSeasonInList(useStore((state: any) => state.RecommendationList))
-    const SerieList = MergeSeasonInList(useStore((state: any) => state.SerieList))
+    const { selectedCategory, selectedColor} = useCategory();
+    const { RecommendationList, SerieList } = useStore((state: any) => state);
+    
+    const movieListWithSeasons = MergeSeasonInList(RecommendationList);
+    const serieListWithSeasons = MergeSeasonInList(SerieList);
+
     const ListRef:any = useRef<FlatList>()
-
-    const [contentList, setContentList] = useState(MovieList)
-    const [colorList, setColorList] = useState('orange')
-
-    useEffect(() => {
-        if (selectedCategory == 'movies') {
-            setContentList(MovieList)
-            setColorList('orange')
-        } else {
-            setContentList(SerieList)
-            setColorList('blue')
-        }
-    }, [selectedCategory])
+    const contentList = selectedCategory === 'movies' ? movieListWithSeasons : serieListWithSeasons;
 
     function MergeSeasonInList(RecommendationList: any) {
         let movieIndex = 0
@@ -70,7 +63,7 @@ const ContentGridComponent = ({navigation, selectedCategory}: any) => {
                             imagelink={item.image_link}
                             name={item.name}
                             season_name={item.season}
-                            color={colorList}
+                            color={selectedColor}
                           />
                         </TouchableOpacity>
                     </>

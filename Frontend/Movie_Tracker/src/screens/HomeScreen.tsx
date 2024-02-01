@@ -8,21 +8,14 @@ import ContinueSeriesComponent from '../components/home/ContinueSeriesComponent'
 import ShiftCategoryComponent from '../components/misc/ShiftCategoryComponent'
 
 const HomeScreen = ({navigation}: any) => {
-
-  const [selectedCategory, setSelectedCategory] = useState('movies')
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  }
-
   return (
     <View style={styles.ScreenContainer}>
         <LogoComponent />
-        <ShiftCategoryComponent onCategoryChange={handleCategoryChange}/>
+        <ShiftCategoryComponent/>
         <ScrollView>
-          <RecommandationComponent navigation={navigation} category={selectedCategory}/>
-          <WatchlistComponent category={selectedCategory}/>
-          <ContinueSeriesComponent category={selectedCategory}/>
+          <RecommandationComponent navigation={navigation}/>
+          <WatchlistComponent/>
+          <ContinueSeriesComponent/>
         </ScrollView>
     </View>
   )

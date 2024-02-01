@@ -7,17 +7,17 @@ interface ContinueCardProps {
     id: string;
     imagelink: ImageProps;
     name: string;
-    category: string;
+    color: string;
 }
 
 const ContinueCard: React.FC<ContinueCardProps> = ({
     id,
     imagelink,
     name,
-    category,
+    color
 }) => {
     return (
-        <View style={[styles.container, {backgroundColor: category === 'movies' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
+        <View style={[styles.container, {backgroundColor: color}]}>
             <Image
                 style={styles.movieImage}
                 source={imagelink} 

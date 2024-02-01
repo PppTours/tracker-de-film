@@ -1,19 +1,15 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from '../../theme/theme'
+import { useCategory } from './CategoryContent';
 
-const ShiftCategoryComponent = ({ onCategoryChange }) => {
-    const [category, setCategory] = useState("movies")
-    
-    const handleCategoryChange = (category) => {
-        setCategory(category)
-        onCategoryChange(category)
-    }
+const ShiftCategoryComponent = () => {
+    const { selectedCategory, handleCategoryChange} = useCategory();
   return (
     <View style={styles.ShiftContainer}>
         <TouchableOpacity 
             style={
-                styles.ButtonMoviesStyle, category !== "movies" ? 
+                styles.ButtonMoviesStyle, selectedCategory !== "movies" ? 
                 styles.ButtonInactiveStyle : styles.ButtonMoviesStyle}
             onPress= {() => {
                 handleCategoryChange('movies')
@@ -22,7 +18,7 @@ const ShiftCategoryComponent = ({ onCategoryChange }) => {
             <Text style={styles.TextStyle}>Movies</Text>
         </TouchableOpacity>
         <TouchableOpacity 
-            style={styles.ButtonSeriesStyle, category !== "series" ? 
+            style={styles.ButtonSeriesStyle, selectedCategory !== "series" ? 
             styles.ButtonInactiveStyle : styles.ButtonSeriesStyle}
             onPress= {() => {
                 handleCategoryChange('series')

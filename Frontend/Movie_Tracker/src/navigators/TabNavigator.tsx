@@ -7,16 +7,18 @@ import SearchScreen from '../screens/SearchScreen';
 import CollectionScreen from '../screens/CollectionScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import CustomIcon from '../components/CustomIcon';
+import { useCategory } from '../components/misc/CategoryContent';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
+    const { selectedColor } = useCategory();
   return (
     <Tab.Navigator screenOptions={{
         tabBarHideOnKeyboard: true,
         headerShown: false,
         tabBarStyle: styles.tabBarStyle,
-        tabBarActiveTintColor: COLORS.primaryOrangeHex,
+        tabBarActiveTintColor: selectedColor,
         tabBarInactiveTintColor: COLORS.primaryWhiteHex,
         tabBarLabelStyle: {
             fontSize: FONTSIZE.size_14
@@ -28,7 +30,7 @@ const TabNavigator = () => {
             <CustomIcon 
                 name='home' 
                 size={25} 
-                color={focused?COLORS.primaryOrangeHex:COLORS.primaryWhiteHex} 
+                color={focused?selectedColor:COLORS.primaryWhiteHex} 
             />
         )
     }}></Tab.Screen>
@@ -37,7 +39,7 @@ const TabNavigator = () => {
             <CustomIcon 
                 name='search' 
                 size={25} 
-                color={focused?COLORS.primaryOrangeHex:COLORS.primaryWhiteHex} 
+                color={focused?selectedColor:COLORS.primaryWhiteHex} 
             />
         )
     }}></Tab.Screen>
@@ -46,7 +48,7 @@ const TabNavigator = () => {
             <CustomIcon 
                 name='video-camera' 
                 size={25} 
-                color={focused?COLORS.primaryOrangeHex:COLORS.primaryWhiteHex} 
+                color={focused?selectedColor:COLORS.primaryWhiteHex} 
             />
         )
     }}></Tab.Screen>
@@ -55,7 +57,7 @@ const TabNavigator = () => {
             <CustomIcon 
                 name='user' 
                 size={25} 
-                color={focused?COLORS.primaryOrangeHex:COLORS.primaryWhiteHex} 
+                color={focused?selectedColor:COLORS.primaryWhiteHex} 
             />
         )
     }}></Tab.Screen>

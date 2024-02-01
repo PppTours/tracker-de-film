@@ -3,25 +3,20 @@ import React, { useEffect, useRef, useState } from 'react'
 import { COLORS, FONTSIZE, SPACING } from '../../theme/theme'
 import ContinueCard from './cards/ContinueCard'
 import { useStore } from '../../store/store'
+import { useCategory } from '../misc/CategoryContent'
 
-const ContinueSeriesComponent = ({navigation, category}: any) => {
-    const MovieList = useStore((state: any) => state.RecommendationList)
-    const SerieList = useStore((state: any) => state.SerieList)
-    const ListRef:any = useRef<FlatList>()
-    const [contentList, setContentList] = useState(MovieList)
-
-    useEffect(() => {
-      if (category == 'movies') {
-        setContentList(MovieList)
-      } else {
-        setContentList(SerieList)
-      }
-    }, [category])
+const ContinueSeriesComponent = () => {
+  const { selectedCategory, selectedColor} = useCategory();
+  const { RecommendationList, SerieList } = useStore((state: any) => state);
+  
+  const ListRef:any = useRef<FlatList>()
+  const contentList = selectedCategory === 'movies' ? RecommendationList : SerieList;
+  
   return (
     <View style={styles.ContinueSeriesContainer}>
         <StatusBar backgroundColor={COLORS.primaryDarkBlue} />
         <View style={styles.headerContainer}>
-          <View style={[styles.TextRowContainer, {borderBottomColor: category === 'movies' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
+          <View style={[styles.TextRowContainer, {borderBottomColor: selectedColor}]}>
                 <Text style={styles.ContinueSeriesText}>CONTINUE SERIES</Text>
             </View>
         </View>
@@ -41,7 +36,7 @@ const ContinueSeriesComponent = ({navigation, category}: any) => {
                             id={item.id}
                             imagelink={season.image_link}
                             name={item.name}
-                            category={category}
+                            color={selectedColor}
                           />
                         </TouchableOpacity>
                       ))}

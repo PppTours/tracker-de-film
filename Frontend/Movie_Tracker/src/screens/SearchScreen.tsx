@@ -5,17 +5,12 @@ import ShiftCategoryComponent from '../components/misc/ShiftCategoryComponent'
 import ContentGridComponent from '../components/search/ContentGridComponent'
 
 const SearchScreen = ({navigation}: any) => {
-  const [selectedCategory, setSelectedCategory] = useState('movies')
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  }
 
   return (
     <View style={styles.ScreenContainer}>
       <ScrollView>
-        <ShiftCategoryComponent onCategoryChange={handleCategoryChange}/>
-        <ContentGridComponent navigation={navigation} selectedCategory={selectedCategory}/>
+        <ShiftCategoryComponent/>
+        <ContentGridComponent navigation={navigation}/>
       </ScrollView>
 
     </View>

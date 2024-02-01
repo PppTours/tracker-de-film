@@ -7,14 +7,14 @@ interface RecommendationCardProps {
     id: string;
     imagelink: ImageProps;
     name: string;
-    category: string;
+    color: string;
 }
 
 const RecommendationCard: React.FC<RecommendationCardProps> = ({
     id,
     imagelink,
     name,
-    category
+    color
 }) => {
     return (
         <View style={styles.container}>
@@ -23,7 +23,7 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
                     style={styles.movieImage}
                     source={imagelink}
                     resizeMode='contain'/>
-                <Text style={[styles.movieName, {color: category === 'movies' ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
+                <Text style={[styles.movieName, {color: color}]}>
                     {name.length < 15
                         ? `${name}`
                         : `${name.substring(0,15)}...`}

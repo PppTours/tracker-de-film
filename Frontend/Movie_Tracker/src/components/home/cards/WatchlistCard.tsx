@@ -8,7 +8,7 @@ interface WatchlistCardProps {
     imagelink: ImageProps;
     name: string;
     category: string[];
-    globalcategory: string;
+    color: string;
 }
 
 const WatchlistCard: React.FC<WatchlistCardProps> = ({
@@ -16,11 +16,11 @@ const WatchlistCard: React.FC<WatchlistCardProps> = ({
     imagelink,
     name,
     category,
-    globalcategory,
+    color
 }) => {
     console.log("category:", category)
     return (
-        <View style={[styles.container, { backgroundColor: globalcategory === "movies" ? COLORS.primaryOrangeHex : COLORS.primaryBlue}]}>
+        <View style={[styles.container, { backgroundColor: color}]}>
             <View style={styles.flexContainer}>
                 <Image
                     style={styles.movieImage}
