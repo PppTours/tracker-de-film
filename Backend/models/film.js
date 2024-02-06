@@ -34,7 +34,7 @@ const Film = sequelize.define('Film', {
 
 
 
-Film.belongsTo(Director,{foreignKey: 'idDirector', as: 'director',});
+Film.belongsTo(Director,{foreignKey: {name:'idDirector', allowNull: true}, as: 'director',});
 
 
 module.exports = Film ;

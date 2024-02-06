@@ -1,12 +1,15 @@
 const jwt = require('jsonwebtoken');
 const db = require('../models');
 const fetch = require('node-fetch');
-const Person = require('../models');
-const Film = require('../models');
+const {Person, Movie, TvShow, Film, Director} = require('../models');
+const { DATE } = require('sequelize');
+
 
 const token = process.env.TOKEN_TMDB;
 const apikey = process.env.APIKEY_TMDB;
 const URLTMDB = 'https://api.themoviedb.org/3';
+
+
 
 const headerWithToken = {
   accept: 'application/json',
@@ -20,14 +23,13 @@ const headerWithToken = {
 function processStringURL(input) {
     return new Promise((resolve, reject) => {
       try {
-        // Trim the string to remove leading and trailing spaces
         const trimmedString = input.trim();
-        // Replace spaces with "%20"
+        
         const replacedString = trimmedString.replace(/\s+/g, "%20");
-        // Resolve the promise with the result
+      
         resolve(replacedString);
       } catch (error) {
-        // Reject the promise if an error occurs
+        
         reject(error);
       }
     });
@@ -121,21 +123,68 @@ exports.getMovieInfo = (req,res) =>
 
 }
 
-exports.saveMovieInDB = (req,res) =>
+function isDateValid(dateStr) {
+  return !isNaN(new Date(dateStr));
+}
+
+exports.saveMovieInDB = async (req,res) =>
 {
  
   try {
-    const [idFilm, name, release_date, description] = req.body;
-    if (!idFilm || !name || !release_date || !description) {
+     const idFilm = req.body.idFilm;
+    const name = req.body.name;
+    const release_date = req.body.release_date;
+    const description = req.body.description;
+    if (!idFilm || !name || !release_date || !description ) {
       return res.status(400).json({ error: "Incomplete information in the body" });
     }
 
+    const film =  await Film.findByPk(idFilm);
+    if (film)
+    {
+      return res.status(400).json({error : "The film already exist in the database"}); 
+    }
+
+    if(!isDateValid(release_date))
+    {
+      return res.status(400).json({error : "The date format isn't correct. Make sure it is in the following format : YYYY/MM/DD"})
+    }
+    const movie_date = new Date(release_date)
+    const film_to_create = {
+      idFilm : idFilm,
+      name : name, 
+      release_date : movie_date,
+      description : description, 
+    };
+    await Film.save(film_to_create);
     
+    await Movie.save(idFilm);
 
     return res.status(200).json("idFilm, name, release_date, description");
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
+}
 
+exports.readMovieInDB = async (req,res) => 
+{
+  try {
 
+    const idFilm = req.body.idFilm; 
+
+    if(!idFilm)
+    {
+      return res.status(400).json({error: "Incomplete field in the body"});
+    }
+    const film = await Film.findByPk(idFilm);
+    if(!film)
+    {
+      return res.status(404).json({error : "The film id isn't associated with a movie"});
+    }
+
+    return res.status(200).json({film : film});
+    
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
 }
